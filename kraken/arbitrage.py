@@ -507,8 +507,8 @@ async def calc_triangular_arb_surface_rate(t_pair, prices_dict, starting_amount)
         """ PROFIT LOSS OUTPUT """
         
         # Profit and Loss Calculation
-        print(f"Acquired {swap_3} {acquired_coin_t3}")
-        print(f"Starting amount {starting_amount}")
+        # print(f"Acquired {swap_3} {acquired_coin_t3}")
+        # print(f"Starting amount {starting_amount}")
         profit_loss = acquired_coin_t3 - starting_amount
         profit_loss_perc = (profit_loss / starting_amount) * 100 if profit_loss != 0 else 0
         

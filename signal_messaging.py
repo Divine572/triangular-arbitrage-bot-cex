@@ -15,5 +15,5 @@ def send_signal_message(message):
     res = requests.get(url)
     if res.status_code == 200:
         return "sent"
-    else: 
+    else:
         return "failed"

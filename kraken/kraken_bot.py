@@ -42,7 +42,7 @@ async def calc_surface_and_real_rates():
     # Loop through and get structured price info
     for t_pair in structured_pairs:
         prices_dict = await arbitrage.get_price_for_t_pair(t_pair)        
-        surface_rate_arb = await arbitrage.calc_triangular_arb_surface_rate(t_pair, prices_dict, 1)
+        surface_rate_arb = await arbitrage.calc_triangular_arb_surface_rate(t_pair, prices_dict, 100)
         if len(surface_rate_arb) > 0:
             print(2 * "\n" + 100* "-")
             print("*************** NEW TRADE SIGNAL (Surface Rate) ✅ *******************")
@@ -55,8 +55,9 @@ async def calc_surface_and_real_rates():
             print(f' ✅ Profit & Loss Percentage -> {surface_rate_arb["profit_loss_perc"]}%')
             print(100 * "-" + "\n")
             
-            message = 2 * "\n" + 100* "-"\
-                f' 🟢 {surface_rate_arb["exchange"]} EXCHANGE ARBITRAGE SIGNAL\n'\
+        
+            message = f'*************** NEW TRADE SIGNAL (Surface Rate) ✅ *******************\n'\
+            f' 🟢 {surface_rate_arb["exchange"]} EXCHANGE ARBITRAGE SIGNAL\n'\
                     f' 🤖 {surface_rate_arb["trade_description_1"]}\n'\
                         f' 🤖 {surface_rate_arb["trade_description_2"]}\n'\
                         f' 🤖 {surface_rate_arb["trade_description_3"]}\n'\
