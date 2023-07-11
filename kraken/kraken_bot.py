@@ -55,7 +55,8 @@ async def calc_surface_and_real_rates():
             print(f' ✅ Profit & Loss Percentage -> {surface_rate_arb["profit_loss_perc"]}%')
             print(100 * "-" + "\n")
             
-        
+
+
             message = f'*************** NEW TRADE SIGNAL (Surface Rate) ✅ *******************\n'\
             f' 🟢 {surface_rate_arb["exchange"]} EXCHANGE ARBITRAGE SIGNAL\n'\
                     f' 🤖 {surface_rate_arb["trade_description_1"]}\n'\
